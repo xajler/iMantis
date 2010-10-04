@@ -9,6 +9,6 @@
 	<key>MantisUrl</key>
 	<string></string>
 	<key>MantisWebServicePath</key>
-	<string>mantis/api/soap/mantisconnect.php</string>
+	<string>/mantis/api/soap/mantisconnect.php</string>
 </dict>
 </plist>

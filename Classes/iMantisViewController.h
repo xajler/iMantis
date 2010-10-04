@@ -7,10 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NTPListHelper.h"
+#import "NTWebService.h"
+
+@class iMantisAppDelegate;
 
 @interface iMantisViewController : UIViewController {
-
+    IBOutlet UITextField *usernameTextField;
+    IBOutlet UITextField *passwordTextField;
+    IBOutlet UITextField *mantisURLTextField;
+    
+    NTPListHelper *plistHelper;
+    iMantisAppDelegate *appDelegate;
 }
+
+- (IBAction)login:(id)sender;
 
 @end
 

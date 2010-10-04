@@ -8,19 +8,34 @@
 
 
 #import "iMantisAppDelegate.h"
-
 #import "iMantisViewController.h"
+#import "NTWebService.h"
 
 @implementation iMantisAppDelegate
 
 
-@synthesize window;
-
-@synthesize viewController;
+@synthesize window, viewController, messageArray, soapRequestMessage;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    // Override point for customization after application launch.
+    /*
+    if (soapRequestMessage != nil)
+    {
+        NTWebService *webService = [[NTWebService alloc]  initNTWebService];
+        
+        NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData: [webService connectToWebService:soapRequestMessage]];
+        
+        //Set delegate
+        [xmlParser setDelegate:webService];
+        
+        //Start parsing the XML file.
+        BOOL success = [xmlParser parse];
+        
+        if(success)
+            NSLog(@"No Errors");
+        else
+            NSLog(@"Error Error Error!!!");
+    }
+*/
      
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];

@@ -7,10 +7,36 @@
 //
 
 #import "iMantisViewController.h"
+#import "iMantisAppDelegate.h"
 
 @implementation iMantisViewController
 
-
+- (IBAction)login:(id)sender
+{
+    plistHelper = [[NTPListHelper alloc] init];
+    NSMutableDictionary *settings = [plistHelper getPListAsMutableDictionary:@"Settings"];
+    
+    [settings setObject:usernameTextField.text forKey:@"Username"];
+    [settings setObject:passwordTextField.text forKey:@"Password"];
+    [settings setObject:mantisURLTextField.text forKey:@"MantisUrl"];      
+    
+    [settings release];
+    
+    NTWebService *webService = [[NTWebService alloc]  initNTWebService];
+    
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData: [webService connectToWebService:@"mc_enum_status"]];
+    
+    //Set delegate
+    [xmlParser setDelegate:webService];
+    
+    //Start parsing the XML file.
+    BOOL success = [xmlParser parse];
+    
+    if(success)
+        NSLog(@"No Errors");
+    else
+        NSLog(@"Error Error Error!!!");
+}
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -53,8 +79,9 @@
 }
 
 - (void)viewDidUnload {
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
+	appDelegate = (iMantisAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    
 }
 
 

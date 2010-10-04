@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		11979A4A125A425B0009EB89 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11979A49125A425B0009EB89 /* Settings.plist */; };
-		11979A54125A437F0009EB89 /* PListHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A53125A437F0009EB89 /* PListHelper.m */; };
+		11979A54125A437F0009EB89 /* NTPListHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A53125A437F0009EB89 /* NTPListHelper.m */; };
+		11979A68125A53AF0009EB89 /* NTWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A67125A53AF0009EB89 /* NTWebService.m */; };
+		11979A6D125A6AAC0009EB89 /* NTSOAPPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A6A125A6AAC0009EB89 /* NTSOAPPart.m */; };
 		11D0F8081255293D00E057EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F8071255293D00E057EF /* UIKit.framework */; };
 		11D0F80A1255293D00E057EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F8091255293D00E057EF /* Foundation.framework */; };
 		11D0F80C1255293D00E057EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F80B1255293D00E057EF /* CoreGraphics.framework */; };
@@ -22,8 +24,12 @@
 
 /* Begin PBXFileReference section */
 		11979A49125A425B0009EB89 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
-		11979A52125A437F0009EB89 /* PListHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PListHelper.h; sourceTree = "<group>"; };
-		11979A53125A437F0009EB89 /* PListHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListHelper.m; sourceTree = "<group>"; };
+		11979A52125A437F0009EB89 /* NTPListHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPListHelper.h; sourceTree = "<group>"; };
+		11979A53125A437F0009EB89 /* NTPListHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPListHelper.m; sourceTree = "<group>"; };
+		11979A66125A53AF0009EB89 /* NTWebService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTWebService.h; sourceTree = "<group>"; };
+		11979A67125A53AF0009EB89 /* NTWebService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTWebService.m; sourceTree = "<group>"; };
+		11979A69125A6AAC0009EB89 /* NTSOAPPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTSOAPPart.h; sourceTree = "<group>"; };
+		11979A6A125A6AAC0009EB89 /* NTSOAPPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTSOAPPart.m; sourceTree = "<group>"; };
 		11D0F8041255293D00E057EF /* iMantis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMantis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11D0F8071255293D00E057EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		11D0F8091255293D00E057EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,8 +63,12 @@
 		11979A51125A43100009EB89 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				11979A52125A437F0009EB89 /* PListHelper.h */,
-				11979A53125A437F0009EB89 /* PListHelper.m */,
+				11979A69125A6AAC0009EB89 /* NTSOAPPart.h */,
+				11979A6A125A6AAC0009EB89 /* NTSOAPPart.m */,
+				11979A66125A53AF0009EB89 /* NTWebService.h */,
+				11979A67125A53AF0009EB89 /* NTWebService.m */,
+				11979A52125A437F0009EB89 /* NTPListHelper.h */,
+				11979A53125A437F0009EB89 /* NTPListHelper.m */,
 			);
 			name = Infrastructure;
 			sourceTree = "<group>";
@@ -192,7 +202,9 @@
 				11D0F8131255293D00E057EF /* main.m in Sources */,
 				11D0F8161255293D00E057EF /* iMantisAppDelegate.m in Sources */,
 				11D0F81C1255293D00E057EF /* iMantisViewController.m in Sources */,
-				11979A54125A437F0009EB89 /* PListHelper.m in Sources */,
+				11979A54125A437F0009EB89 /* NTPListHelper.m in Sources */,
+				11979A68125A53AF0009EB89 /* NTWebService.m in Sources */,
+				11979A6D125A6AAC0009EB89 /* NTSOAPPart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
