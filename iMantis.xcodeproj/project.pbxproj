@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11979A4A125A425B0009EB89 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11979A49125A425B0009EB89 /* Settings.plist */; };
+		11979A54125A437F0009EB89 /* PListHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A53125A437F0009EB89 /* PListHelper.m */; };
+		11D0F8081255293D00E057EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F8071255293D00E057EF /* UIKit.framework */; };
+		11D0F80A1255293D00E057EF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F8091255293D00E057EF /* Foundation.framework */; };
+		11D0F80C1255293D00E057EF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D0F80B1255293D00E057EF /* CoreGraphics.framework */; };
+		11D0F8111255293D00E057EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 11D0F80F1255293D00E057EF /* InfoPlist.strings */; };
+		11D0F8131255293D00E057EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D0F8121255293D00E057EF /* main.m */; };
+		11D0F8161255293D00E057EF /* iMantisAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D0F8151255293D00E057EF /* iMantisAppDelegate.m */; };
+		11D0F8191255293D00E057EF /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D0F8171255293D00E057EF /* MainWindow.xib */; };
+		11D0F81C1255293D00E057EF /* iMantisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11D0F81B1255293D00E057EF /* iMantisViewController.m */; };
+		11D0F81F1255293D00E057EF /* iMantisViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11D0F81D1255293D00E057EF /* iMantisViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		11979A49125A425B0009EB89 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
+		11979A52125A437F0009EB89 /* PListHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PListHelper.h; sourceTree = "<group>"; };
+		11979A53125A437F0009EB89 /* PListHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListHelper.m; sourceTree = "<group>"; };
+		11D0F8041255293D00E057EF /* iMantis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMantis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11D0F8071255293D00E057EF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		11D0F8091255293D00E057EF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		11D0F80B1255293D00E057EF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11D0F80D1255293D00E057EF /* iMantis-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMantis-Info.plist"; sourceTree = "<group>"; };
+		11D0F80E1255293D00E057EF /* iMantis_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMantis_Prefix.pch; sourceTree = "<group>"; };
+		11D0F8101255293D00E057EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		11D0F8121255293D00E057EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		11D0F8141255293D00E057EF /* iMantisAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMantisAppDelegate.h; sourceTree = "<group>"; };
+		11D0F8151255293D00E057EF /* iMantisAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMantisAppDelegate.m; sourceTree = "<group>"; };
+		11D0F8181255293D00E057EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		11D0F81A1255293D00E057EF /* iMantisViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iMantisViewController.h; sourceTree = "<group>"; };
+		11D0F81B1255293D00E057EF /* iMantisViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iMantisViewController.m; sourceTree = "<group>"; };
+		11D0F81E1255293D00E057EF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/iMantisViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11D0F8011255293D00E057EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D0F8081255293D00E057EF /* UIKit.framework in Frameworks */,
+				11D0F80A1255293D00E057EF /* Foundation.framework in Frameworks */,
+				11D0F80C1255293D00E057EF /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11979A51125A43100009EB89 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				11979A52125A437F0009EB89 /* PListHelper.h */,
+				11979A53125A437F0009EB89 /* PListHelper.m */,
+			);
+			name = Infrastructure;
+			sourceTree = "<group>";
+		};
+		11D0F7F51255293D00E057EF = {
+			isa = PBXGroup;
+			children = (
+				11D0F7FC1255293D00E057EF /* Classes */,
+				11D0F7FD1255293D00E057EF /* Other Sources */,
+				11D0F7FE1255293D00E057EF /* Resources */,
+				11D0F7FF1255293D00E057EF /* Frameworks */,
+				11D0F8051255293D00E057EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11D0F7FC1255293D00E057EF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				11979A51125A43100009EB89 /* Infrastructure */,
+				11D0F8141255293D00E057EF /* iMantisAppDelegate.h */,
+				11D0F8151255293D00E057EF /* iMantisAppDelegate.m */,
+				11D0F81A1255293D00E057EF /* iMantisViewController.h */,
+				11D0F81B1255293D00E057EF /* iMantisViewController.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		11D0F7FD1255293D00E057EF /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				11D0F80E1255293D00E057EF /* iMantis_Prefix.pch */,
+				11D0F8121255293D00E057EF /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		11D0F7FE1255293D00E057EF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11979A49125A425B0009EB89 /* Settings.plist */,
+				11D0F80D1255293D00E057EF /* iMantis-Info.plist */,
+				11D0F80F1255293D00E057EF /* InfoPlist.strings */,
+				11D0F8171255293D00E057EF /* MainWindow.xib */,
+				11D0F81D1255293D00E057EF /* iMantisViewController.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		11D0F7FF1255293D00E057EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11D0F8071255293D00E057EF /* UIKit.framework */,
+				11D0F8091255293D00E057EF /* Foundation.framework */,
+				11D0F80B1255293D00E057EF /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11D0F8051255293D00E057EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11D0F8041255293D00E057EF /* iMantis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11D0F8031255293D00E057EF /* iMantis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11D0F8221255293D00E057EF /* Build configuration list for PBXNativeTarget "iMantis" */;
+			buildPhases = (
+				11D0F8001255293D00E057EF /* Sources */,
+				11D0F8011255293D00E057EF /* Frameworks */,
+				11D0F8021255293D00E057EF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMantis;
+			productName = iMantis;
+			productReference = 11D0F8041255293D00E057EF /* iMantis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11D0F7F71255293D00E057EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Novatec;
+			};
+			buildConfigurationList = 11D0F7FA1255293D00E057EF /* Build configuration list for PBXProject "iMantis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 11D0F7F51255293D00E057EF;
+			productRefGroup = 11D0F8051255293D00E057EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11D0F8031255293D00E057EF /* iMantis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11D0F8021255293D00E057EF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D0F8111255293D00E057EF /* InfoPlist.strings in Resources */,
+				11D0F8191255293D00E057EF /* MainWindow.xib in Resources */,
+				11D0F81F1255293D00E057EF /* iMantisViewController.xib in Resources */,
+				11979A4A125A425B0009EB89 /* Settings.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11D0F8001255293D00E057EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11D0F8131255293D00E057EF /* main.m in Sources */,
+				11D0F8161255293D00E057EF /* iMantisAppDelegate.m in Sources */,
+				11D0F81C1255293D00E057EF /* iMantisViewController.m in Sources */,
+				11979A54125A437F0009EB89 /* PListHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		11D0F80F1255293D00E057EF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11D0F8101255293D00E057EF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		11D0F8171255293D00E057EF /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11D0F8181255293D00E057EF /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		11D0F81D1255293D00E057EF /* iMantisViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11D0F81E1255293D00E057EF /* en */,
+			);
+			name = iMantisViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11D0F8201255293D00E057EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Debug;
+		};
+		11D0F8211255293D00E057EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PREBINDING = NO;
+				SDKROOT = iphoneos4.0;
+			};
+			name = Release;
+		};
+		11D0F8231255293D00E057EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iMantis_Prefix.pch;
+				INFOPLIST_FILE = "iMantis-Info.plist";
+				PRODUCT_NAME = iMantis;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		11D0F8241255293D00E057EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iMantis_Prefix.pch;
+				INFOPLIST_FILE = "iMantis-Info.plist";
+				PRODUCT_NAME = iMantis;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11D0F7FA1255293D00E057EF /* Build configuration list for PBXProject "iMantis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D0F8201255293D00E057EF /* Debug */,
+				11D0F8211255293D00E057EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11D0F8221255293D00E057EF /* Build configuration list for PBXNativeTarget "iMantis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11D0F8231255293D00E057EF /* Debug */,
+				11D0F8241255293D00E057EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11D0F7F71255293D00E057EF /* Project object */;
+}
