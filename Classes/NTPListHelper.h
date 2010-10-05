@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
-@interface NTPListHelper : NSObject {
+@interface NTPListHelper : NSObject
+    <NSXMLParserDelegate> {
     NSString *plistFileName;    
 
 }
+
+@property (nonatomic, retain) NSString *plistFileName;
 
 - (NSMutableDictionary *) getPListAsMutableDictionary:(NSString *) plistName;
 

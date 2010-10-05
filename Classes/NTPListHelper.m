@@ -11,6 +11,8 @@
 
 @implementation NTPListHelper
 
+@synthesize plistFileName;
+
 - (NSMutableDictionary *) getPListAsMutableDictionary:(NSString *) plistName
 {
     plistFileName = [[NSBundle mainBundle] pathForResource:plistName ofType:@"plist"];

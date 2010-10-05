@@ -18,26 +18,97 @@
     
     [settings setObject:usernameTextField.text forKey:@"Username"];
     [settings setObject:passwordTextField.text forKey:@"Password"];
-    [settings setObject:mantisURLTextField.text forKey:@"MantisUrl"];      
+    [settings setObject:mantisURLTextField.text forKey:@"MantisUrl"];  
+    
+    [settings writeToFile:plistHelper.plistFileName atomically:YES];
     
     [settings release];
     
-    NTWebService *webService = [[NTWebService alloc]  initNTWebService];
+    [activityIndicator startAnimating];
     
-    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData: [webService connectToWebService:@"mc_enum_status"]];
+    webService = [[NTWebService alloc]  initNTWebService];
     
-    //Set delegate
-    [xmlParser setDelegate:webService];
+    NSData *webData = [webService connectToWebService:@"mc_enum_status"];
     
-    //Start parsing the XML file.
-    BOOL success = [xmlParser parse];
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithData: webData];
     
-    if(success)
-        NSLog(@"No Errors");
-    else
-        NSLog(@"Error Error Error!!!");
+    /*
+    NSLog(@"DONE. Received Bytes: %d", [webData length]);
+    
+    NSString *theXML = [[NSString alloc] 
+                        initWithBytes: [webData bytes] 
+                        length:[webData length] 
+                        encoding:NSUTF8StringEncoding];
+    
+    NSLog(theXML);
+    [theXML release];   
+    */
+    
+    [xmlParser setDelegate: self];
+    [xmlParser setShouldResolveExternalEntities:YES];
+    if ([xmlParser parse]) {
+        //NSLog(@"parsed");
+         [activityIndicator stopAnimating];  
+        if ([webService isAuthenticated] == YES)
+            NSLog(@"Nice");
+        else
+        {
+            UIAlertView *alertError = [[UIAlertView alloc] initWithTitle: @"iMantis error" 
+                                                                 message: @"Wrong credientals or problem connecting to Mantis server" 
+                                                                delegate: self 
+                                                       cancelButtonTitle: @"Ok" 
+                                                       otherButtonTitles: nil];
+            
+            [alertError show];
+            [alertError release];
+        }
+    }
+    
+    [webData release];
 }
 
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
+                                        namespaceURI:(NSString *)namespaceURI 
+                                       qualifiedName:(NSString *)qualifiedName 
+	                                      attributes:(NSDictionary *)attributeDict {
+    
+    if([elementName isEqualToString:@"faultcode"]) 
+        webService.authenticated = NO;
+	
+	if([elementName isEqualToString:@"return"]) {
+		//messageArray = [[NSMutableArray alloc] init];
+        webService.authenticated = YES;
+	}
+	
+	//NSLog(@"Processing Element: %@", elementName);
+}
+
+/*
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string { 
+	
+	if(!currentElementValue) 
+		currentElementValue = [[NSMutableString alloc] initWithString:string];
+	else
+		[currentElementValue appendString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+	
+	if([elementName isEqualToString:@"return"])
+		return;
+	
+	if([elementName isEqualToString:@"item"]) {
+		[messageArray addObject:currentElementValue];
+    //NSLog(@"Processing Value: %@", currentElementValue);
+        
+	}
+	
+	[currentElementValue release];
+	currentElementValue = nil;
+}
+*/
+ 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -79,9 +150,7 @@
 }
 
 - (void)viewDidUnload {
-	appDelegate = (iMantisAppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    
+	[super viewDidLoad];
 }
 
 

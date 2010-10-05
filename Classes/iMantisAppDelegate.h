@@ -15,15 +15,10 @@
 
     UIWindow *window;
     iMantisViewController *viewController;
-    
-    NSMutableArray *messageArray;
-    NSString *soapRequestMessage;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet iMantisViewController *viewController;
-@property (nonatomic, retain) NSMutableArray *messageArray;
-@property (nonatomic, retain) NSString *soapRequestMessage;
 
 @end
 

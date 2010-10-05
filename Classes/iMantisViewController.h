@@ -10,18 +10,20 @@
 #import "NTPListHelper.h"
 #import "NTWebService.h"
 
-@class iMantisAppDelegate;
 
-@interface iMantisViewController : UIViewController {
+@interface iMantisViewController : UIViewController<NSXMLParserDelegate> {
     IBOutlet UITextField *usernameTextField;
     IBOutlet UITextField *passwordTextField;
     IBOutlet UITextField *mantisURLTextField;
+    IBOutlet UIActivityIndicatorView *activityIndicator;
     
     NTPListHelper *plistHelper;
-    iMantisAppDelegate *appDelegate;
+    NTWebService *webService;
+    
+    NSMutableString *currentElementValue;
+    NSMutableArray *messageArray;
 }
 
 - (IBAction)login:(id)sender;
 
 @end
-

@@ -12,24 +12,30 @@
 
 @class iMantisAppDelegate, NTSOAPPart;
 
-@interface NTWebService : NSObject {
+@interface NTWebService : NSObject <NSXMLParserDelegate> {
     iMantisAppDelegate *appDelegate;
     
-    NSMutableData *webData;
+    NSData *webData;
     NSMutableString *currentElementValue;
     NSURLConnection *conn;
 	
     NTSOAPPart *part;
     NTPListHelper *plistHelper;
-	NSMutableArray *messageArray;
+    NSXMLParser *xmlParser;
+    
+    NSMutableArray *messageArray;
+    
+    BOOL isAuthenticated;
 }
+
+@property (getter=isAuthenticated) BOOL authenticated;
 
 - (NTWebService *) initNTWebService;
 
 - (NSString *)setSOAPRequestMessage:(NSString *)nameService 
                withSOAPMessageParts:(NSMutableArray *)messageParts;
 
-- (NSMutableData *)connectToWebService:(NSString *) soapRequestMessage;
+- (NSData *)connectToWebService:(NSString *) soapRequestMessage;
 
 - (NSMutableArray *) getSOAPMessageParts;
 @end

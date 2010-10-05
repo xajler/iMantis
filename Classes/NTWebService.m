@@ -12,15 +12,15 @@
 
 @implementation NTWebService
 
+@synthesize authenticated;
+
 - (NTWebService *) initNTWebService {
     [super init];
-    
-    appDelegate = (iMantisAppDelegate *)[[UIApplication sharedApplication] delegate];
     
     return self;
 }
 
-- (NSMutableData *)connectToWebService:(NSString *) soapRequestMessage {
+- (NSData *)connectToWebService:(NSString *) soapRequestMessage {
     
     plistHelper = [[NTPListHelper alloc] init];
     NSMutableDictionary *settings = [plistHelper getPListAsMutableDictionary:@"Settings"];
@@ -30,16 +30,15 @@
     [soapParts release];
     
 	//---print it to the Debugger Console for verification---
-    NSLog(soapMsg);
+    NSLog([NSString stringWithFormat:@"%@", soapMsg]);
 	
     //NSURL *url = [NSURL URLWithString: @"http://localhost/mantis/api/soap/mantisconnect.php"];
 	//NSURL *url = [NSURL URLWithString: @"http://systec.serveftp.net:8090/mantis/api/soap/mantisconnect.php"];
     
+    NSString *urlPath = [[NSString alloc] initWithFormat:@"%@%@", [settings valueForKey:@"MantisUrl"],                                   
+                         [settings valueForKey:@"MantisWebServicePath"]];
     
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", 
-                                       [settings valueForKey:@"MantisUrl"],                                        
-                                       [settings valueForKey:@"MantisWebServicePath"] ]];
+    NSURL *url = [NSURL URLWithString: urlPath];
     
     NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
 	
@@ -47,7 +46,7 @@
     NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMsg length]];
     [req addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     //[req addValue:@"http://localhost/mantis/api/soap/mantisconnect.php/mc_project_get_categories" forHTTPHeaderField:@"SOAPAction"];
-    [req addValue:@"http://systec.serveftp.net:8090/mantis/api/soap/mantisconnect.php/mc_project_get_categories" forHTTPHeaderField:@"SOAPAction"];
+    [req addValue:[NSString stringWithFormat:@"%@/@@", urlPath, soapRequestMessage] forHTTPHeaderField:@"SOAPAction"];
     [req addValue:msgLength forHTTPHeaderField:@"Content-Length"];
 	
     //---set the HTTP method and body---
@@ -56,15 +55,13 @@
     
 	
    // [activityIndicator startAnimating];
+    NSError *error;
+    NSURLResponse *response;
+    //conn = [[NSURLConnection alloc] initWithRequest:req delegate: appDelegate startImmediately:YES];
     
-    conn = [[NSURLConnection alloc] initWithRequest:req delegate:self];
-    if (conn) {
-        webData = [[NSMutableData data] retain];
-        //NSLog(webData);
-        return webData;
-    }
-    
-    return nil;
+    webData = [NSURLConnection sendSynchronousRequest:req returningResponse:&response error:&error];
+        
+    return webData;
 }
 
 - (NSString *)setSOAPRequestMessage:(NSString *)nameService 
@@ -122,4 +119,85 @@
     return soapParts;
 }
 
+- (void) connection:(NSURLConnection *) connection 
+ didReceiveResponse:(NSURLResponse *) response {
+    [webData setLength: 0];
+}
+
+- (void) connection:(NSURLConnection *) connection 
+     didReceiveData:(NSData *) data {
+    [webData appendData:data];
+}
+
+-(void) connection:(NSURLConnection *) connection 
+  didFailWithError:(NSError *) error {
+    //NSLog(error);
+    [webData release];
+    [connection release];
+}
+
+- (void) connectionDidFinishLoading:(NSURLConnection *) connection {
+    NSLog(@"DONE. Received Bytes: %d", [webData length]);
+    NSString *theXML = [[NSString alloc] 
+                        initWithBytes: [webData mutableBytes] 
+                        length:[webData length] 
+                        encoding:NSUTF8StringEncoding];
+    //---shows the XML---
+    //[[self delegate] webServiceDidFinish];
+    NSLog(theXML);
+    [theXML release];    
+	
+   // [activityIndicator stopAnimating];    
+    
+	if (xmlParser) {
+        [xmlParser release];
+    }    
+	
+    xmlParser = [[NSXMLParser alloc] initWithData: webData];
+    [xmlParser setDelegate: self];
+    [xmlParser setShouldResolveExternalEntities:YES];
+    [xmlParser parse];
+    
+    [connection release];
+    [webData release];
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName 
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName 
+	attributes:(NSDictionary *)attributeDict {
+    
+    if([elementName isEqualToString:@"faultcode"]) 
+        authenticated = NO;
+	
+	if([elementName isEqualToString:@"return"]) {
+		messageArray = [[NSMutableArray alloc] init];
+        authenticated = YES;
+	}
+	
+	//NSLog(@"Processing Element: %@", elementName);
+}
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string { 
+	
+	if(!currentElementValue) 
+		currentElementValue = [[NSMutableString alloc] initWithString:string];
+	else
+		[currentElementValue appendString:string];
+}
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName 
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+	
+	if([elementName isEqualToString:@"return"])
+		return;
+	
+	if([elementName isEqualToString:@"item"]) {
+		[messageArray addObject:currentElementValue];
+        NSLog(@"Processing Value: %@", currentElementValue);
+        
+	}
+	
+	[currentElementValue release];
+	currentElementValue = nil;
+}
 @end
