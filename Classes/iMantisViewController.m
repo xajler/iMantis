@@ -54,7 +54,7 @@
         else
         {
             UIAlertView *alertError = [[UIAlertView alloc] initWithTitle: @"iMantis error" 
-                                                                 message: @"Wrong credientals or problem connecting to Mantis server" 
+                                                                 message: @"Wrong credientals or problem connecting to Mantis server!" 
                                                                 delegate: self 
                                                        cancelButtonTitle: @"Ok" 
                                                        otherButtonTitles: nil];

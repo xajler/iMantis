@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11898894125BCAF600265133 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11898892125BCAF600265133 /* RootViewController.m */; };
+		11898895125BCAF600265133 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11898893125BCAF600265133 /* RootViewController.xib */; };
 		11979A4A125A425B0009EB89 /* Settings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11979A49125A425B0009EB89 /* Settings.plist */; };
 		11979A54125A437F0009EB89 /* NTPListHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A53125A437F0009EB89 /* NTPListHelper.m */; };
 		11979A68125A53AF0009EB89 /* NTWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 11979A67125A53AF0009EB89 /* NTWebService.m */; };
@@ -23,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11898891125BCAF600265133 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = SOURCE_ROOT; };
+		11898892125BCAF600265133 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = SOURCE_ROOT; };
+		11898893125BCAF600265133 /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RootViewController.xib; path = "Users/Kornelije/Documents/Programming/Objective-C/Projects/iMantis/RootViewController.xib"; sourceTree = SDKROOT; };
 		11979A49125A425B0009EB89 /* Settings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Settings.plist; sourceTree = "<group>"; };
 		11979A52125A437F0009EB89 /* NTPListHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTPListHelper.h; sourceTree = "<group>"; };
 		11979A53125A437F0009EB89 /* NTPListHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTPListHelper.m; sourceTree = "<group>"; };
@@ -87,6 +92,8 @@
 		11D0F7FC1255293D00E057EF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11898891125BCAF600265133 /* RootViewController.h */,
+				11898892125BCAF600265133 /* RootViewController.m */,
 				11979A51125A43100009EB89 /* Infrastructure */,
 				11D0F8141255293D00E057EF /* iMantisAppDelegate.h */,
 				11D0F8151255293D00E057EF /* iMantisAppDelegate.m */,
@@ -109,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				11979A49125A425B0009EB89 /* Settings.plist */,
+				11898893125BCAF600265133 /* RootViewController.xib */,
 				11D0F80D1255293D00E057EF /* iMantis-Info.plist */,
 				11D0F80F1255293D00E057EF /* InfoPlist.strings */,
 				11D0F8171255293D00E057EF /* MainWindow.xib */,
@@ -189,6 +197,7 @@
 				11D0F8191255293D00E057EF /* MainWindow.xib in Resources */,
 				11D0F81F1255293D00E057EF /* iMantisViewController.xib in Resources */,
 				11979A4A125A425B0009EB89 /* Settings.plist in Resources */,
+				11898895125BCAF600265133 /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +214,7 @@
 				11979A54125A437F0009EB89 /* NTPListHelper.m in Sources */,
 				11979A68125A53AF0009EB89 /* NTWebService.m in Sources */,
 				11979A6D125A6AAC0009EB89 /* NTSOAPPart.m in Sources */,
+				11898894125BCAF600265133 /* RootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
